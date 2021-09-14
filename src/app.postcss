@@ -1,0 +1,59 @@
+@tailwind base;
+
+/* Write your global styles here, in PostCSS syntax */
+body { 
+    background-color: #333;
+    @apply text-gray-200;
+}
+
+a {
+    transition: background .4s;
+}
+
+.colorcycle {
+	background: linear-gradient(to right, #32C5FF 0%, #B620E0 33%, #F7B500 66%, #32C5FF 100%);
+	background-size:200%;
+	color: #000;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+	from {
+        background-position: 100%;
+	}
+	to {
+        background-position: 300%;
+	}
+}
+
+#flame {
+    mask: url(/circle.svg);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    grid-row-start: 1;
+    grid-column-start: 1
+}
+
+#flamegrid {
+    transition: all 2s;
+    grid-gap: 0%;
+    transform: rotate(0deg);
+}
+
+.flamequad {
+    display: grid;
+    /* mix-blend-mode: color-burn; */
+    background-color: #333;
+    /* background-color: rgba(51, 51, 51, 1); */
+    /* border: 2px solid #333; */
+    opacity: 100%;
+    transition: all;
+}
+
+@tailwind components;
+@tailwind utilities;
