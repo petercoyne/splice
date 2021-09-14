@@ -7,10 +7,11 @@
 		let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 		let myInterval = setInterval(function () {
-			// if (!isSafari) {
-				let randomRotation = Math.floor(Math.random() * 180);
+			if (isSafari) {
 				flamegrid.style.transform = "Scale(" + Math.abs((Math.random() + 1) * 2) + ')';
-			// }
+			} else {
+				flamegrid.style.gridGap = Math.floor(Math.random() * 35) + '%';
+			}
 		}, 4000);
 		let myInterval2 = setInterval(function () {
 			let randomRotation = Math.floor(Math.random() * 180);
