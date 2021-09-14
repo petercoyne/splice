@@ -36,12 +36,13 @@ a {
     mask-size: contain;
     mask-position: center;
     grid-row-start: 1;
-    grid-column-start: 1
+    grid-column-start: 1;
+    transition: transform 2s;
 }
 
 #flamegrid {
     transition: all 2s;
-    grid-gap: 0%;
+    grid-gap: 3rem;
     transform: rotate(0deg);
 }
 
@@ -49,7 +50,7 @@ a {
     display: grid;
     /* mix-blend-mode: color-burn; */
     background-color: #333;
-    /* background-color: rgba(51, 51, 51, 1); */
+    /* background-color: rgba(51, 51, 51, 0.3); */
     /* border: 2px solid #333; */
     opacity: 100%;
     transition: all;

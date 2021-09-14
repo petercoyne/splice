@@ -4,15 +4,20 @@
 	onMount(async () => {
 		let flamegrid = document.getElementById('flamegrid');
 		let secondarrows = document.getElementById('secondarrows');
-		// let splicetext = document.getElementById('splicetext');
+		let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 		let myInterval = setInterval(function () {
-			let randomRotation = Math.floor(Math.random() * 180);
-			flamegrid.style.gridGap = Math.floor(Math.random() * 45) + '%';
-			secondarrows.style.transform = "rotate(" + randomRotation + "deg)";
-			// splicetext.style.transform = "rotate(-" + randomRotation + "deg)";
+			// if (!isSafari) {
+				let randomRotation = Math.floor(Math.random() * 180);
+				flamegrid.style.transform = "Scale(" + Math.abs((Math.random() + 1) * 2) + ')';
+			// }
 		}, 4000);
 		let myInterval2 = setInterval(function () {
+			let randomRotation = Math.floor(Math.random() * 180);
+			secondarrows.style.transform = "rotate(" + randomRotation + "deg)";
+			flame.style.transform = "rotate(" + randomRotation + "deg)"
+		}, 4000);
+		let myInterval3 = setInterval(function () {
 			secondarrows.style.padding = Math.floor(Math.random() * 15) + '%';
 			flamegrid.style.transform = "rotate(" + Math.floor(Math.random() * 180) + "deg)";
 		}, 3000);
@@ -59,8 +64,8 @@
     </div>
 </div>
 
-<a href="https://github.com/petercoyne/" class="mx-auto grid grid-cols-3 w-20 h-20 text-white hover:bg-white hover:bg-opacity-5">
-	<div class="block justify-self-start self-start w-3 h-3 border-t border-l border-white opacity-20"></div>
-	<img src="/icons_github.svg" alt="github link" class="mx-auto text-white self-center"/>
-	<div class="block justify-self-end self-end w-3 h-3 border-r border-b border-white opacity-20" />
+<a href="https://github.com/petercoyne/" class="mx-auto grid z-50 grid-cols-3 w-20 h-20 text-white hover:bg-white hover:bg-opacity-5">
+	<div class="block z-50 justify-self-start self-start w-3 h-3 border-t border-l border-white opacity-20"></div>
+	<img src="/icons_github.svg" alt="github link" class="mx-auto z-50 text-white self-center"/>
+	<div class="block z-50 justify-self-end self-end w-3 h-3 border-r border-b border-white opacity-20" />
 </a>
