@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@sveltejs/adapter-netlify': ^1.0.0-next.30
   '@sveltejs/kit': next
+  '@tailwindcss/aspect-ratio': ^0.2.1
   autoprefixer: ^10.3.4
   cssnano: ^5.0.8
   postcss: ^8.3.6
@@ -10,6 +11,9 @@ specifiers:
   svelte: ^3.34.0
   svelte-preprocess: ^4.9.4
   tailwindcss: ^2.2.15
+
+dependencies:
+  '@tailwindcss/aspect-ratio': 0.2.1_tailwindcss@2.2.15
 
 devDependencies:
   '@sveltejs/adapter-netlify': 1.0.0-next.30
@@ -124,6 +128,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@tailwindcss/aspect-ratio/0.2.1_tailwindcss@2.2.15:
+    resolution: {integrity: sha512-aDFi80aHQ3JM3symJ5iKU70lm151ugIGFCI0yRZGpyjgQSDS+Fbe93QwypC1tCEllQE8p0S7TUu20ih1b9IKLA==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0'
+    dependencies:
+      tailwindcss: 2.2.15_4dc2d3db2b138fb8fa7d5c7b0c803aba
+    dev: false
 
   /@trysound/sax/0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}

@@ -17,5 +17,8 @@
 		"svelte-preprocess": "^4.9.4",
 		"tailwindcss": "^2.2.15"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@tailwindcss/aspect-ratio": "^0.2.1"
+	}
 }
