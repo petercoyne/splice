@@ -16,7 +16,7 @@
 		let myInterval2 = setInterval(function () {
 			let randomRotation = Math.floor(Math.random() * 180);
 			secondarrows.style.transform = "rotate(" + randomRotation + "deg)";
-			flame.style.transform = "rotate(" + randomRotation + "deg)"
+			// flame.style.transform = "rotate(" + randomRotation + "deg)"
 		}, 4000);
 		let myInterval3 = setInterval(function () {
 			secondarrows.style.padding = Math.floor(Math.random() * 15) + '%';
