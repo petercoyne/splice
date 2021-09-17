@@ -8,7 +8,7 @@
 
 		let myInterval = setInterval(function () {
 			if (isSafari) {
-				flamegrid.style.transform = "Scale(" + Math.abs((Math.random() + 1) * 2) + ')';
+				flamegrid.style.transform = "Scale(" + Math.abs((Math.random() * 1.5) + 1) + ')';
 			} else {
 				flamegrid.style.gridGap = Math.floor(Math.random() * 35) + '%';
 			}
