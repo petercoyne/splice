@@ -19,6 +19,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@tailwindcss/aspect-ratio": "^0.2.1"
+		"@tailwindcss/aspect-ratio": "^0.2.1",
+		"typescript": "^4.4.3"
 	}
 }
