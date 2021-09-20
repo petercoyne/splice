@@ -1,5 +1,16 @@
 <script context="module">
 	export const load = async ({ fetch }) => {
+
+		// GA_KCDAG_H08 DM1
+		// #SPLUSB16433 DM2
+		// #SPLUS7834D1 DM3
+		// #SPLUS3D630E DM4
+		// #SPLUSE3B3BF SD1
+		// #SPLUS58465E SD2
+		// #SPLUSB1643A you are here
+		// GA_KSOFT_H0847SOF8
+
+
 		const res = await fetch('http://home.splice.ie:3000/stuff?_id=%23SPLUSB1643A');
 		const data = await res.json();
 
@@ -20,8 +31,8 @@
 
 		classes[0][day].forEach(element => {
 
-			// hack 1: start at 7 to remove course name, end at -2 to remove type. Capitalise the rest
-			element.newModuleName = element.moduleName.slice(7,-2).toLowerCase().split(' ').map(capitalize).join(' ');
+			// slice 1: remove last 2 chars (class type), slice2: remove first word (courses)
+			element.newModuleName = element.moduleName.slice(0,-2).toLowerCase().split(' ').slice(1).map(capitalize).join(' ');
 
 			switch (element.moduleName.slice(-1)) {
 				case 'L':
