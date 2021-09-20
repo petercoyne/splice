@@ -20,20 +20,25 @@
 
 		classes[0][day].forEach(element => {
 
+			// hack 1: start at 7 to remove course name, end at -2 to remove type. Capitalise the rest
 			element.newModuleName = element.moduleName.slice(7,-2).toLowerCase().split(' ').map(capitalize).join(' ');
 
 			switch (element.moduleName.slice(-1)) {
 				case 'L':
 					element.classType = "Lecture";
+					element.color = "blue";
 					break;
 				case 'P':
 					element.classType = "Lab";
+					element.color = "yellow";
 					break;
 				case 'T':
 					element.classType = "Tutorial";
+					element.color = "pink";
 					break;
 				default:
 					element.classType = "Unknown Type";
+					element.color = "gray";
 			}
 			// console.log(element.moduleName.slice(-6,-2))
 			switch (element.moduleName.slice(-3,-2)) {
@@ -64,29 +69,35 @@
 	{#each days as day}
 	<h4 class="m-4 mb-0 uppercase text-gray-400">{day}</h4>
 	
-	{#each getClasses(day) as classs}
-	{#if classs.classGroup == group || classs.classGroup == ""}
-	<div class="grid gap-2 m-2" style="grid-template-columns: 3rem 0.25rem 1fr">
-		<div class="time text-right text-sm self-center">
-			<div class="from">{classs.startTime}</div>
-			<div class="to text-gray-400">{classs.endTime}</div>
-		</div>
-		<div class="divider w-1 bg-gray-400"></div>
-		<div class="classinfo self-center flex">
-			<div class="flex-grow">
-				<div class="moduletitle -mt-0.5">{classs.newModuleName}</div>
-				<div class="classtype text-gray-400 text-xs">{classs.classType}, {classs.lecturer}</div>
+		{#each getClasses(day) as classs}
+		{#if classs.classGroup == group || classs.classGroup == ""}
+		<hr class="border-gray-200"/>
+		<div class="grid gap-2 m-2" style="grid-template-columns: 3rem 0.25rem 1fr">
+			<div class="time text-right text-sm self-center">
+				<div class="from">{classs.startTime}</div>
+				<div class="to text-gray-400">{classs.endTime}</div>
 			</div>
-			<div class="roomnumber inline text-right mr-2 self-center text-sm">
-				{classs.room}
+			<div class="divider w-1 bg-{classs.color}-400"></div>
+			<div class="classinfo self-center flex">
+				<div class="flex-grow">
+					<div class="moduletitle -mt-0.5">{classs.newModuleName}</div>
+					<div class="classtype text-gray-400 text-xs">{classs.classType}, {classs.lecturer}</div>
+				</div>
+				{#if classs.room.length > 1}
+					<div class="roomnumber inline text-right mr-2 self-center text-sm border bg-gray-50 border-gray-200 p-2 ml-2 rounded-xl">
+						{classs.room}
+					</div>
+				{/if}
 			</div>
 		</div>
-	</div>
-	{/if}
-	{/each}
+		{/if}
+		{/each}
 	{/each}
 
 </div>
+<div class="dummy bg-pink-400"></div>
+<div class="dummy bg-yellow-400"></div>
+<div class="dummy bg-blue-400"></div>
 
 <style lang="postcss">
 	label { @apply mx-2 bg-gray-200 p-2 rounded-lg hover:bg-gray-300 cursor-pointer inline-block; }
