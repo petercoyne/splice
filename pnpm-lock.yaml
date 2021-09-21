@@ -3,23 +3,23 @@ lockfileVersion: 5.3
 specifiers:
   '@sveltejs/adapter-netlify': ^1.0.0-next.30
   '@sveltejs/kit': next
-  '@tailwindcss/aspect-ratio': ^0.2.1
   autoprefixer: ^10.3.4
   cssnano: ^5.0.8
   postcss: ^8.3.6
   postcss-load-config: ^3.1.0
   svelte: ^3.34.0
+  svelte-local-storage-store: ^0.2.4
   svelte-preprocess: ^4.9.4
   tailwindcss: ^2.2.15
   typescript: ^4.4.3
 
 dependencies:
-  '@tailwindcss/aspect-ratio': 0.2.1_tailwindcss@2.2.15
+  svelte-local-storage-store: 0.2.4_svelte@3.42.5
   typescript: 4.4.3
 
 devDependencies:
   '@sveltejs/adapter-netlify': 1.0.0-next.30
-  '@sveltejs/kit': 1.0.0-next.169_svelte@3.42.5
+  '@sveltejs/kit': 1.0.0-next.170_svelte@3.42.5
   autoprefixer: 10.3.4_postcss@8.3.6
   cssnano: 5.0.8_postcss@8.3.6
   postcss: 8.3.6
@@ -91,8 +91,8 @@ packages:
       esbuild: 0.12.28
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.169_svelte@3.42.5:
-    resolution: {integrity: sha512-MtYsQIIB35qVHrEDD7yzZejga/0mOHnvS6qy0zkcpyZxbbDu9/BUTBAGHrCiL2qvajI94eUPSzjWaCbRap809g==}
+  /@sveltejs/kit/1.0.0-next.170_svelte@3.42.5:
+    resolution: {integrity: sha512-1Zfl0qC6qOFI3Q/Q33Lnt7HBusNcCDryJFyzIXmICxNmmeJ6qn7K6vF80uZ+uX4XoByjdYs7Iu54D3OGUOF0EA==}
     engines: {node: ^12.20 || >=14.13}
     hasBin: true
     peerDependencies:
@@ -130,14 +130,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /@tailwindcss/aspect-ratio/0.2.1_tailwindcss@2.2.15:
-    resolution: {integrity: sha512-aDFi80aHQ3JM3symJ5iKU70lm151ugIGFCI0yRZGpyjgQSDS+Fbe93QwypC1tCEllQE8p0S7TUu20ih1b9IKLA==}
-    peerDependencies:
-      tailwindcss: '>=2.0.0'
-    dependencies:
-      tailwindcss: 2.2.15_4dc2d3db2b138fb8fa7d5c7b0c803aba
-    dev: false
 
   /@trysound/sax/0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -1559,6 +1551,15 @@ packages:
     dependencies:
       svelte: 3.42.5
     dev: true
+
+  /svelte-local-storage-store/0.2.4_svelte@3.42.5:
+    resolution: {integrity: sha512-a1YKh715xvGp2N/dDY3TN4+To9uP0gr4E5aLKck0WjDMc3dLGgSr+cZ/GQTt5YBRMl4ip+o0yMfkjzZaKYPbxQ==}
+    engines: {node: '>=0.14'}
+    peerDependencies:
+      svelte: ^3.38.2
+    dependencies:
+      svelte: 3.42.5
+    dev: false
 
   /svelte-preprocess/4.9.4_daa1dde3742b6db5461aad5898de2c89:
     resolution: {integrity: sha512-Z0mUQBGtE+ZZSv/HerRSHe7ukJokxjiPeHe7iPOIXseEoRw51H3K/Vh6OMIMstetzZ11vWO9rCsXSD/uUUArmA==}

@@ -1,15 +1,15 @@
 <script context="module">
+	// export const ssr = false;
 	export const load = async ({ fetch }) => {
 
 		// GA_KCDAG_H08 DM1
-		// #SPLUSB16433 DM2
-		// #SPLUS7834D1 DM3
-		// #SPLUS3D630E DM4
-		// #SPLUSE3B3BF SD1
-		// #SPLUS58465E SD2
-		// #SPLUSB1643A you are here
-		// GA_KSOFT_H0847SOF8
-
+		// %23SPLUSB16433 DM2
+		// %23SPLUS7834D1 DM3
+		// %23SPLUS3D630E DM4
+		// %23SPLUSE3B3BF SD1
+		// %23SPLUS58465E SD2
+		// %23SPLUSB1643A you are here
+		// GA_KSOFT_H0847SOF8 SD4
 
 		const res = await fetch('http://home.splice.ie:3000/stuff?_id=%23SPLUSB1643A');
 		const data = await res.json();
@@ -19,9 +19,9 @@
 </script>
 
 <script>
+	import { group } from "./stores";
 	export let classes;
 	let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-	export let group = "A";
 
 	function capitalize(str) {
 		return str.charAt(0).toUpperCase() + str.slice(1);
@@ -70,18 +70,18 @@
 </script>
 
 <div class="container mx-auto max-w-lg">
-	<h3 class="text-xs m-4">Timetable for next week. <span class="text-gray-400">Scrapes weekdays at 07:05</span></h3>
+	<h3 class="text-xs m-4">Timetable for this week. <span class="text-gray-400">Scrapes weekdays at 07:05</span></h3>
 	
 	<div class="mx-2">
-		<label><input type=radio bind:group={group} value={"A"}> Group A</label>
-		<label><input type=radio bind:group={group} value={"B"}> Group B</label>
+		<label><input type=radio bind:group={$group} value={"A"}> Group A</label>
+		<label><input type=radio bind:group={$group} value={"B"}> Group B</label>
 	</div>
 	
 	{#each days as day}
 	<h4 class="m-4 mb-0 uppercase text-gray-400">{day}</h4>
 	
 		{#each getClasses(day) as classs}
-		{#if classs.classGroup == group || classs.classGroup == ""}
+		{#if classs.classGroup == $group || classs.classGroup == ""}
 		<hr class="border-gray-200"/>
 		<div class="grid gap-2 m-2" style="grid-template-columns: 3rem 0.25rem 1fr">
 			<div class="time text-right text-sm self-center">
@@ -90,12 +90,12 @@
 			</div>
 			<div class="divider w-1 bg-{classs.color}-400"></div>
 			<div class="classinfo self-center flex">
-				<div class="flex-grow">
-					<div class="moduletitle -mt-0.5">{classs.newModuleName}</div>
+				<div class="flex-grow self-center">
+					<div class="moduletitle -mt-0.5 text-sm sm:text-base">{classs.newModuleName}</div>
 					<div class="classtype text-gray-400 text-xs">{classs.classType}, {classs.lecturer}</div>
 				</div>
 				{#if classs.room.length > 1}
-					<div class="roomnumber inline text-right mr-2 self-center text-sm border bg-gray-50 border-gray-200 p-2 ml-2 rounded-xl">
+					<div class="roomnumber inline text-right mr-2 self-center text-xs sm:text-sm border bg-gray-50 border-gray-200 p-1 sm:p-2 ml-2 rounded sm:rounded-xl">
 						{classs.room}
 					</div>
 				{/if}
@@ -106,6 +106,8 @@
 	{/each}
 
 </div>
+
+<!-- // workaround for tailwind JIT and dynamic colours -->
 <div class="dummy bg-pink-400"></div>
 <div class="dummy bg-yellow-400"></div>
 <div class="dummy bg-blue-400"></div>
