@@ -59,6 +59,9 @@
 				case 'B':
 					element.classGroup = "B";
 					break;
+				case 'C':
+					element.classGroup = "C";
+					break;
 				default: 
 					element.classGroup = "";
 			}
@@ -70,11 +73,12 @@
 </script>
 
 <div class="container mx-auto max-w-lg">
-	<h3 class="text-xs m-4">Timetable for this week. <span class="text-gray-400">Scrapes weekdays at 07:05</span></h3>
+	<h3 class="text-xs m-4">Timetable for next week. <span class="text-gray-400">Scrapes weekdays at 07:05</span></h3>
 	
 	<div class="mx-2">
 		<label><input type=radio bind:group={$group} value={"A"}> Group A</label>
 		<label><input type=radio bind:group={$group} value={"B"}> Group B</label>
+		<label><input type=radio bind:group={$group} value={"C"}> Group C</label>
 	</div>
 	
 	{#each days as day}
