@@ -21,6 +21,7 @@
 <script>
 	import { group } from "./stores";
 	export let classes;
+	
 	let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
 	function capitalize(str) {
@@ -31,10 +32,16 @@
 
 		classes[0][day].forEach(element => {
 
-			// slice 1: remove last 2 chars (class type), slice2: remove first word (courses)
-			element.newModuleName = element.moduleName.slice(0,-2).toLowerCase().split(' ').slice(1).map(capitalize).join(' ');
+			let tempElement = element.moduleName;
 
-			switch (element.moduleName.slice(-1)) {
+			if (element.moduleName.split(' ').slice(-1) == "(ONLINE)") {
+				tempElement = element.moduleName.toString().split(' ').slice(0,-1).join(' ');
+			}
+
+			// slice 1: remove last 2 chars (class type), slice2: remove first word (courses)
+			element.newModuleName = tempElement.trim().slice(0,-2).toLowerCase().split(' ').slice(1).map(capitalize).join(' ');
+
+			switch (tempElement.trim().slice(-1)) {
 				case 'L':
 					element.classType = "Lecture";
 					element.color = "blue";
@@ -52,14 +59,14 @@
 					element.color = "gray";
 			}
 			// console.log(element.moduleName.slice(-6,-2))
-			switch (element.moduleName.slice(-3,-2)) {
-				case 'A':
+			switch (element.moduleName.slice(-4,-2)) {
+				case ' A':
 					element.classGroup = "A";
 					break;
-				case 'B':
+				case ' B':
 					element.classGroup = "B";
 					break;
-				case 'C':
+				case ' C':
 					element.classGroup = "C";
 					break;
 				default: 
@@ -115,6 +122,7 @@
 <div class="dummy bg-pink-400"></div>
 <div class="dummy bg-yellow-400"></div>
 <div class="dummy bg-blue-400"></div>
+<div class="dummy bg-gray-400"></div>
 
 <style lang="postcss">
 	label { @apply mx-2 bg-gray-200 p-2 rounded-lg hover:bg-gray-300 cursor-pointer inline-block; }

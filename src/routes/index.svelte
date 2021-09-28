@@ -25,7 +25,7 @@
 	});
 </script>
 
-<div id="theroot" class="w-screen min-h-screen" style="background-color: #555">
+<div id="theroot" class="w-screen min-h-screen" style="background-color: #555; cursor: url('/cursor.svg'), auto;	">
 	<div class="pt-24 pb-12 grid grid-cols-1 grid-rows-1 max-w-xl mx-auto">
 		<video id="flame" class="z-10 w-full" src="/6.mp4" autoplay playsinline muted loop />
 		<div id="secondarrows" class="grid mx-auto z-40 grid-rows-2 grid-cols-2" style="width: 56.25%; grid-row-start: 1; grid-column-start: 1; transition: all 1s">
