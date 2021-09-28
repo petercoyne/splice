@@ -35,7 +35,7 @@
 			let tempElement = element.moduleName;
 
 			if (element.moduleName.split(' ').slice(-1) == "(ONLINE)") {
-				tempElement = element.moduleName.toString().split(' ').slice(0,-1).join(' ');
+				tempElement = element.moduleName.toString().split(' ').slice(0,-1).join(' ').trim();
 			}
 
 			// slice 1: remove last 2 chars (class type), slice2: remove first word (courses)
@@ -59,7 +59,7 @@
 					element.color = "gray";
 			}
 			// console.log(element.moduleName.slice(-6,-2))
-			switch (element.moduleName.slice(-4,-2)) {
+			switch (tempElement.slice(-4,-2)) {
 				case ' A':
 					element.classGroup = "A";
 					break;
