@@ -25,10 +25,10 @@
 	});
 </script>
 
-<div id="theroot" class="w-screen min-h-screen" style="background-color: #555; cursor: url('/cursor.svg'), auto;	">
+<div id="theroot" class="w-screen min-h-screen bg-[#555] selection:bg-pink-2" style="cursor: url('/cursor.svg'), auto;	">
 	<div class="pt-24 pb-12 grid grid-cols-1 grid-rows-1 max-w-xl mx-auto">
 		<video id="flame" class="z-10 w-full" src="/6.mp4" autoplay playsinline muted loop />
-		<div id="secondarrows" class="grid mx-auto z-40 grid-rows-2 grid-cols-2" style="width: 56.25%; grid-row-start: 1; grid-column-start: 1; transition: all 1s">
+		<div id="secondarrows" class="grid mx-auto z-40 grid-rows-2 grid-cols-2 w-[56.25%] row-start-1 col-start-1 transition-all duration-1000">
 			<div class="block justify-self-start self-start w-3 h-3 border-t border-l border-white opacity-80"></div>
 			<div class="block justify-self-end self-start w-3 h-3 border-t border-r border-white opacity-80" />
 			<div class="block self-end w-3 h-3 border-l border-b border-white opacity-80">
@@ -37,8 +37,7 @@
 		</div>
 		<div
 			id="flamegrid"
-			class="grid grid-cols-2 z-20 mx-auto left-0 right-0 min-h-full"
-			style="width: 56.25%; grid-row-start: 1; grid-column-start: 1"
+			class="grid grid-cols-2 z-20 mx-auto left-0 right-0 min-h-full w-[56.25%] row-start-1 col-start-1"
 		>
 			<div id="flameq1" class="flamequad">
 				<div
@@ -57,12 +56,11 @@
 				<div class="block w-3 h-3 border-l border-t border-white opacity-80 m-4" />
 			</div>
 		</div>
-		<div class="mt-24 grid z-30 items-center justify-items-center" style="grid-row-start: 2; grid-column-start: 1">
+		<div class="mt-24 grid z-30 items-center justify-items-center row-start-2 col-start-1">
 			<h1 class="inline relative colorcycle text-3xl font-thin">splice</h1>
 		</div>
-		<div class="mt-24 grid z-40 items-center justify-items-center" style="color: #FFF; grid-row-start: 2; grid-column-start: 1">
+		<div class="mt-24 grid z-40 items-center justify-items-center row-start-2 col-start-1 text-white">
 			<h1 class="inline relative text-3xl font-thin mb-1">splice</h1>
-			<!-- so peter likes interesting conceptual experiments -->
 		</div>
 	</div>
 	
