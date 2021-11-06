@@ -2,25 +2,24 @@
 	import { onMount } from 'svelte';
 
 	onMount(async () => {
+
+		// old style JS, svelte gets complainy about bindings
 		let flamegrid = document.getElementById('flamegrid');
 		let secondarrows = document.getElementById('secondarrows');
 		let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-		let myInterval = setInterval(function () {
+		setInterval(function () {
 			if (isSafari) {
 				flamegrid.style.transform = "Scale(" + Math.abs((Math.random() * 1.5) + 1) + ')';
 			} else {
 				flamegrid.style.gridGap = Math.floor(Math.random() * 35) + '%';
 			}
-		}, 4000);
-		let myInterval2 = setInterval(function () {
 			let randomRotation = Math.floor(Math.random() * 180);
-			secondarrows.style.transform = "rotate(" + randomRotation + "deg)";
-			// flame.style.transform = "rotate(" + randomRotation + "deg)"
+			secondarrows.style.transform = `rotate(${Math.floor(Math.random() * 180)}deg)`;
 		}, 4000);
-		let myInterval3 = setInterval(function () {
+		setInterval(function () {
 			secondarrows.style.padding = Math.floor(Math.random() * 15) + '%';
-			flamegrid.style.transform = "rotate(" + Math.floor(Math.random() * 180) + "deg)";
+			flamegrid.style.transform = `rotate(${Math.floor(Math.random() * 180)}deg)`;
 		}, 3000);
 	});
 </script>
