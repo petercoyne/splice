@@ -24,7 +24,7 @@
 	});
 </script>
 
-<div id="theroot" class="w-screen min-h-screen bg-[#555] selection:bg-pink-2" style="cursor: url('/cursor.svg'), auto;	">
+<div id="theroot" class="w-screen min-h-screen bg-[#333] selection:bg-pink-2" style="cursor: url('/cursor.svg'), auto;	">
 	<div class="pt-24 pb-12 grid grid-cols-1 grid-rows-1 max-w-xl mx-auto">
 		<video id="flame" class="z-10 w-full" src="/6.mp4" autoplay playsinline muted loop />
 		<div id="secondarrows" class="grid mx-auto z-40 grid-rows-2 grid-cols-2 w-[56.25%] row-start-1 col-start-1 transition-all duration-1000">
@@ -58,8 +58,8 @@
 		<div class="mt-24 grid z-30 items-center justify-items-center row-start-2 col-start-1">
 			<h1 class="inline relative colorcycle text-3xl font-thin">splice</h1>
 		</div>
-		<div class="mt-24 grid z-40 items-center justify-items-center row-start-2 col-start-1 text-white">
-			<h1 class="inline relative text-3xl font-thin mb-1">splice</h1>
+		<div class="mt-24 grid z-20 items-center justify-items-center row-start-2 col-start-1 text-black">
+			<h1 class="inline relative text-3xl font-thin mt-1">splice</h1>
 		</div>
 	</div>
 	

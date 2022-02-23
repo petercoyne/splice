@@ -7,15 +7,16 @@
     "errno": "ENOENT",
     "syscall": "spawn",
     "file": "sh",
-    "pkgid": "~TODO~@0.0.1",
+    "pkgid": "splice.ie@0.0.3",
     "stage": "dev",
     "script": "svelte-kit dev",
-    "pkgname": "~TODO~",
+    "pkgname": "splice.ie",
     "err": {
-      "name": "Error",
-      "message": "~TODO~@0.0.1 dev: `svelte-kit dev`\nspawn ENOENT",
+      "name": "pnpm",
+      "message": "splice.ie@0.0.3 dev: `svelte-kit dev`\nspawn ENOENT",
       "code": "ELIFECYCLE",
-      "stack": "Error: ~TODO~@0.0.1 dev: `svelte-kit dev`\nspawn ENOENT\n    at ChildProcess.<anonymous> (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:89015:20)\n    at ChildProcess.emit (node:events:394:28)\n    at maybeClose (node:internal/child_process:1064:16)\n    at Process.ChildProcess._handle.onexit (node:internal/child_process:301:5)"
+      "stack": "pnpm: splice.ie@0.0.3 dev: `svelte-kit dev`\nspawn ENOENT\n    at ChildProcess.<anonymous> (/opt/homebrew/Cellar/node/17.0.1/pnpm-global/5/node_modules/.pnpm/pnpm@6.30.1/node_modules/pnpm/dist/pnpm.cjs:92204:22)\n    at ChildProcess.emit (node:events:390:28)\n    at maybeClose (node:internal/child_process:1062:16)\n    at Process.ChildProcess._handle.onexit (node:internal/child_process:301:5)"
     }
-  }
+  },
+  "2 warn pnpm:global": " Local package.json exists, but node_modules missing, did you mean to install?"
 }
